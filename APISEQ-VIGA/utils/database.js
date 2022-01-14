@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize');
+require('dotenv/config')
 
 
-const sequelize = new Sequelize('viga', 'root', 'Anurag!23', {
-  dialect: 'mysql',
-  host: 'localhost'
+const sequelize = new Sequelize(process.env.SCHEMA, process.env.ACC, process.env.PASSWORD, {
+  dialect: process.env.DIALECT,
+  host: process.env.HOST
 });
 
 module.exports = sequelize;
